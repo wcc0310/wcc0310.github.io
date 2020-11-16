@@ -4,11 +4,13 @@
     <title>Hello World</title>
     <url>/2020/11/13/hello-world/</url>
     <content><![CDATA[<p>Welcome to <a href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p>
+<a id="more"></a>
+
 <h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo new <span class="string">&quot;My New Post&quot;</span></span><br></pre></td></tr></table></figure>
 
 <p>More info: <a href="https://hexo.io/docs/writing.html">Writing</a></p>
 <h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
-<a id="more"></a>
+
 <p>More info: <a href="https://hexo.io/docs/server.html">Server</a></p>
 <h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
 
@@ -16,6 +18,34 @@
 <h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
 
 <p>More info: <a href="https://hexo.io/docs/one-command-deployment.html">Deployment</a></p>
+]]></content>
+  </entry>
+  <entry>
+    <title></title>
+    <url>/2020/11/16/hexo%E7%BE%8E%E5%8C%96/</url>
+    <content><![CDATA[<p>title: hexo美化</p>
+<p>以下的配置基于NEXT主题</p>
+<h2 id="头像设置"><a href="#头像设置" class="headerlink" title="头像设置"></a>头像设置</h2><p>打开D:\blog\themes\next\source\css_common\components\sidebar文件夹下的sidebar-author.styl文件在.site-author-image {}中 添加以下代码</p>
+<figure class="highlight yml"><table><tr><td class="code"><pre><span class="line"><span class="string">.site-author-image</span> &#123;</span><br><span class="line">  <span class="attr">display:</span> <span class="string">block;</span></span><br><span class="line">  <span class="attr">margin:</span> <span class="number">0</span> <span class="string">auto;</span></span><br><span class="line">  <span class="attr">padding:</span> <span class="string">$site-author-image-padding;</span></span><br><span class="line">  <span class="attr">max-width:</span> <span class="string">$site-author-image-width;</span></span><br><span class="line">  <span class="attr">height:</span> <span class="string">$site-author-image-height;</span></span><br><span class="line">  <span class="attr">border:</span> <span class="string">$site-author-image-border-width</span> <span class="string">solid</span> <span class="string">$site-author-image-border-color;</span></span><br><span class="line"></span><br><span class="line">  <span class="string">/*</span> <span class="string">头像圆形</span> <span class="string">*/</span></span><br><span class="line">  <span class="attr">border-radius:</span> <span class="string">80px;</span></span><br><span class="line">  <span class="string">-webkit-border-radius:</span> <span class="string">80px;</span></span><br><span class="line">  <span class="string">-moz-border-radius:</span> <span class="string">80px;</span></span><br><span class="line">  <span class="attr">box-shadow:</span> <span class="string">inset</span> <span class="number">0</span> <span class="string">-1px</span> <span class="number">0</span> <span class="comment">#333sf;</span></span><br><span class="line"></span><br><span class="line">  <span class="string">/*</span> <span class="string">设置循环动画：animation:动画名称</span> <span class="string">动画播放时长单位秒或微秒</span></span><br><span class="line">    <span class="string">动画播放的速度曲线linear为匀速</span> <span class="string">动画播放次数infinite为循环播放;</span> <span class="string">*/</span></span><br><span class="line">  <span class="string">-webkit-animation:</span> <span class="string">play</span> <span class="string">6s</span> <span class="string">linear</span> <span class="string">infinite;</span></span><br><span class="line">  <span class="string">-moz-animation:</span> <span class="string">play</span> <span class="string">6s</span> <span class="string">linear</span> <span class="string">infinite;</span></span><br><span class="line">  <span class="attr">animation:</span> <span class="string">play</span> <span class="string">6s</span> <span class="string">linear</span> <span class="string">infinite;</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>设置鼠标经过头像停止旋转，在sidebar-author.styl文件中添加以下代码</p>
+<figure class="highlight yml"><table><tr><td class="code"><pre><span class="line"><span class="string">img:hover</span> &#123;</span><br><span class="line">  <span class="string">/*</span> <span class="string">鼠标经过停止头像旋转</span> <span class="string">*/</span></span><br><span class="line">  <span class="string">-webkit-animation-play-state:paused;</span></span><br><span class="line">  <span class="string">animation-play-state:paused;</span></span><br><span class="line"></span><br><span class="line">  <span class="string">/*</span> <span class="string">鼠标经过头像旋转360度</span></span><br><span class="line">  <span class="string">-webkit-transform:</span> <span class="string">rotateZ(360deg);</span></span><br><span class="line">  <span class="string">-moz-transform:</span> <span class="string">rotateZ(360deg);</span></span><br><span class="line">  <span class="attr">transform:</span> <span class="string">rotateZ(360deg);*/</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
+
+<h2 id="添加外链音乐"><a href="#添加外链音乐" class="headerlink" title="添加外链音乐"></a>添加外链音乐</h2><p>这里演示如何将网易云音乐展示在博客中，其他音乐应该类似。登录网易云音乐网页版（客户端不支持生成外链播放器），将自己的歌单分享到自己的动态中</p>
+<p><img src="http://www.wccheng.cn/img/image-20201116171047631.png" alt="image-20201116171047631"></p>
+<p>在主页—动态中找到自己分享的歌单，点击生成外链播放器</p>
+<p><img src="http://www.wccheng.cn/img/image-20201116171350279.png" alt="image-20201116171350279"></p>
+<p>这里可以调整外链播放器的样式及尺寸，大家根据需求自己修改，改好以后复制以下代码</p>
+<p><img src="http://www.wccheng.cn/img/image-20201116171537388.png" alt="image-20201116171537388"></p>
+<p>打开D:\blog\themes\next\layout_macro文件夹下面的sidebar.swig文件，将什么代码插入相应位置即可</p>
+<p><img src="http://www.wccheng.cn/img/image-20201116172829908.png" alt="image-20201116172829908"></p>
+<p><img src="C:\Users\wccheng\AppData\Roaming\Typora\typora-user-images\image-20201116182404270.png" alt="image-20201116182404270"></p>
+<h2 id="网站icon修改"><a href="#网站icon修改" class="headerlink" title="网站icon修改"></a>网站icon修改</h2><p> 主题的_config.yml配置文件中有这么一段代码</p>
+<figure class="highlight yml"><table><tr><td class="code"><pre><span class="line"><span class="attr">favicon:</span></span><br><span class="line">  <span class="attr">small:</span> <span class="string">/images/favicon-16x16.png</span></span><br><span class="line">  <span class="attr">medium:</span> <span class="string">/images/favicon-32x32.png</span></span><br><span class="line">  <span class="attr">apple_touch_icon:</span> <span class="string">/images/apple-touch-icon-next.png</span></span><br><span class="line">  <span class="attr">safari_pinned_tab:</span> <span class="string">/images/logo.svg</span></span><br></pre></td></tr></table></figure>
+
+<p>可以看出网站的icon的图片就在主题的images文件夹中，所以我们先找一张自己喜欢的图片，通过这个网站<a href="https://www.favicon-generator.org/%E6%94%B9%E6%88%90%E7%9B%B8%E5%BA%94%E5%B0%BA%E5%AF%B8%EF%BC%8C%E6%94%BE%E5%9C%A8images%E6%96%87%E4%BB%B6%E5%A4%B9%E4%B8%8B%EF%BC%8C%E5%86%8D%E5%B0%86%E4%B8%8A%E9%9D%A2%E4%BB%A3%E7%A0%81%E4%B8%AD%E6%96%87%E4%BB%B6%E5%90%8D%E6%94%B9%E6%88%90%E8%87%AA%E5%B7%B1%E5%9B%BE%E7%89%87%E7%9A%84%E6%96%87%E4%BB%B6%E5%90%8D%E5%8D%B3%E5%8F%AF">https://www.favicon-generator.org/改成相应尺寸，放在images文件夹下，再将上面代码中文件名改成自己图片的文件名即可</a> </p>
 ]]></content>
   </entry>
 </search>
